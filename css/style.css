@@ -33,3 +33,16 @@ input:focus, textarea:focus {
     border-color: #ff5722;
     outline: none; 
 }
+
+button{
+    padding: 10px;
+    background-color: #ff6b00;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px; 
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
