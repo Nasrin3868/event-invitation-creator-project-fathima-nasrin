@@ -28,3 +28,8 @@ input, textarea{
     background-color: #f3f4f6;
     border-color: #3498db;
 }
+
+input:focus, textarea:focus {
+    border-color: #ff5722;
+    outline: none; 
+}
