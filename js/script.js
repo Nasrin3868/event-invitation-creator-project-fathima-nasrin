@@ -28,8 +28,7 @@ function handleSubmit(){
     addEventToLocalStorage(eventName,eventDate,startTime,endTime,description,location)
 
     document.getElementById("event-form").reset()
-    const eventToDisplay=getEventsFromLocalStorage()
-    displayEvent(eventToDisplay)
+    window.location.href = "inviteCard.html";
 }
 // Function to show the modal
 function showError(){
@@ -42,6 +41,22 @@ function closeError(){
     document.getElementById("error-modal").style.display = "none"; 
     document.body.style.overflow = "auto";
 }
+
+// inviteCard.js
+
+window.onload = function() {
+    const eventData = JSON.parse(localStorage.getItem('event'));
+    console.log("eventDAta",eventData)
+    if (eventData) {
+        document.getElementById('event-name-display').innerText = eventData.eventName;
+        document.getElementById('event-date-display').innerText = eventData.eventDate;
+        document.getElementById('event-time-display').innerText = `${eventData.startTime} - ${eventData.endTime}`;
+        document.getElementById('event-location-display').innerText = `Location: ${eventData.location}`;
+        document.getElementById('event-description-display').innerText = eventData.description;
+    } else {
+        document.getElementById('event-name-display').innerText = "No event details found.";
+    }
+};
 
 document.getElementById("event-form").addEventListener("submit", handleSubmit)
 document.getElementById("close-modal").addEventListener("click",closeError)
