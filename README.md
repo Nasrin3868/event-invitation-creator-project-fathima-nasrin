@@ -19,7 +19,7 @@ The Event Invitation Creator project allows users to create a digital invitation
 To run the project locally on your computer:
 
 1. Clone the repository:
-git clone https://github.com/yourusername/event-invitation-creator.git
+git clone https://github.com/Nasrin3868/event-invitation-creator-project-fathima-nasrin.git
 
 2. Navigate to the project directory:
 cd event-invitation-creator
@@ -45,7 +45,7 @@ If you'd like to contribute to this project, follow these steps:
 1. Fork the repository by clicking the "Fork" button on GitHub.
 
 2. Clone your fork to your local machine:
-git clone https://github.com/yourusername/event-invitation-creator.git
+git clone https://github.com/Nasrin3868/event-invitation-creator-project-fathima-nasrin.git
 
 3. Create a new branch for your changes:
 git checkout -b feature-name
