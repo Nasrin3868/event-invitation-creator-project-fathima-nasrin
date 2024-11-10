@@ -48,7 +48,7 @@ window.onload = function() {
     const eventData = JSON.parse(localStorage.getItem('event'));
     console.log("eventDAta",eventData)
     if (eventData) {
-        document.getElementById('event-name-display').innerText = eventData.eventName;
+        document.getElementById('event-name-display').innerText = eventData.eventName.toUpperCase();
         document.getElementById('event-date-display').innerText = eventData.eventDate;
         document.getElementById('event-time-display').innerText = `${eventData.startTime} - ${eventData.endTime}`;
         document.getElementById('event-location-display').innerText = `Location: ${eventData.location}`;
@@ -57,6 +57,9 @@ window.onload = function() {
         document.getElementById('event-name-display').innerText = "No event details found.";
     }
 };
+
+
+
 
 document.getElementById("event-form").addEventListener("submit", handleSubmit)
 document.getElementById("close-modal").addEventListener("click",closeError)
