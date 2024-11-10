@@ -18,7 +18,7 @@ The Event Invitation Creator project allows users to create a digital invitation
 ## Installation & Usage
 To run the project locally on your computer:
 
-1. Clone the repository:
+1. Clone the repository: 
 git clone https://github.com/Nasrin3868/event-invitation-creator-project-fathima-nasrin.git
 
 2. Navigate to the project directory:
