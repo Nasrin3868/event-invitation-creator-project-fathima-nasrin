@@ -49,7 +49,7 @@ window.onload = function() {
     console.log("eventDAta",eventData)
     if (eventData) {
         document.getElementById('event-name-display').innerText = eventData.eventName.toUpperCase();
-        document.getElementById('event-date-display').innerText = eventData.eventDate;
+        document.getElementById('event-date-display').innerText = formatDateToReadableFormat(eventData.eventDate);
         document.getElementById('event-time-display').innerText = `${eventData.startTime} - ${eventData.endTime}`;
         document.getElementById('event-location-display').innerText = `Location: ${eventData.location}`;
         document.getElementById('event-description-display').innerText = eventData.description;
@@ -58,6 +58,11 @@ window.onload = function() {
     }
 };
 
+function formatDateToReadableFormat(dateString){
+    const date = new Date(dateString);
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+}
 
 
 
