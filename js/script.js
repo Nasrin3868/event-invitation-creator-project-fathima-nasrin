@@ -48,10 +48,10 @@ window.onload = function() {
     const eventData = JSON.parse(localStorage.getItem('event'));
     console.log("eventDAta",eventData)
     if (eventData) {
-        document.getElementById('event-name-display').innerText = eventData.eventName.toUpperCase();
+        document.getElementById('event-name-display').innerText = eventData.eventName;
         document.getElementById('event-date-display').innerText = formatDateToReadableFormat(eventData.eventDate);
         document.getElementById('event-time-display').innerText = `${convertTo12HourFormat(eventData.startTime)} - ${convertTo12HourFormat(eventData.endTime)}`;
-        document.getElementById('event-location-display').innerText = `Location: ${eventData.location}`;
+        document.getElementById('event-location-display').innerText = eventData.location;
         document.getElementById('event-description-display').innerText = eventData.description;
     } else {
         document.getElementById('event-name-display').innerText = "No event details found.";
