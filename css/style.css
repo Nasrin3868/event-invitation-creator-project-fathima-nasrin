@@ -21,6 +21,9 @@ h1 {
     color: #0d47a1;
     text-align: center;
 }
+h3{
+    text-align: center;
+}
 
 input, textarea{
     padding: 5px;

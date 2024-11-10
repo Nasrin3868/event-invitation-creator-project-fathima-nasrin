@@ -49,14 +49,32 @@ window.onload = function() {
     console.log("eventDAta",eventData)
     if (eventData) {
         document.getElementById('event-name-display').innerText = eventData.eventName;
-        document.getElementById('event-date-display').innerText = eventData.eventDate;
-        document.getElementById('event-time-display').innerText = `${eventData.startTime} - ${eventData.endTime}`;
-        document.getElementById('event-location-display').innerText = `Location: ${eventData.location}`;
+        document.getElementById('event-date-display').innerText = formatDateToReadableFormat(eventData.eventDate);
+        document.getElementById('event-time-display').innerText = `${convertTo12HourFormat(eventData.startTime)} - ${convertTo12HourFormat(eventData.endTime)}`;
+        document.getElementById('event-location-display').innerText = eventData.location;
         document.getElementById('event-description-display').innerText = eventData.description;
     } else {
         document.getElementById('event-name-display').innerText = "No event details found.";
     }
 };
+
+function formatDateToReadableFormat(dateString){
+    const date = new Date(dateString);
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+}
+ 
+function convertTo12HourFormat(time){
+    const [hours,minutes]=time.split(":")
+    let hours12=parseInt(hours,10)
+    const meridiem=hours12>=12?"PM":"AM"
+    console.log(hours12,hours,meridiem);
+    hours12=hours12%12||12;
+    const hours12Padded=String(hours12).padStart(2, "0");
+    return `${hours12Padded}:${minutes} ${meridiem}`
+}
+
+
 
 document.getElementById("event-form").addEventListener("submit", handleSubmit)
 document.getElementById("close-modal").addEventListener("click",closeError)
